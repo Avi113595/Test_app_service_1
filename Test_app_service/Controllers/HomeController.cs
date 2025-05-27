@@ -20,7 +20,8 @@ namespace Test_app_service.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            throw new Exception("This is a test exception to demonstrate error handling in the application.");
+            //return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
