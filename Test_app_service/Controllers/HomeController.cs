@@ -24,15 +24,16 @@ namespace Test_app_service.Controllers
 
         public IActionResult Privacy()
         {
-            throw new Exception("This is a test exception to demonstrate error handling in the application.");
-            //return View();
+            //throw new Exception("This is a test exception to demonstrate error handling in the application.");
+            return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("error")]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+        [Route("healthcheck/staging")]
         public IActionResult HealthCheck_staging()
         {
             return Ok("The application is running smoothly.");
